@@ -8,5 +8,5 @@ sudo apt install unzip && \
     unzip main.zip -d dotfiles && \
     cd dotfiles/dotfiles-main && \
     sh main.sh && \
-    sudo rm -rf main.zip
+    cd ~ && sudo rm -rf main.zip
 ```
