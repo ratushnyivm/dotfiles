@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 echo '\n :: Update apt :: \n'
 sudo apt -y update
@@ -11,3 +11,6 @@ sudo apt install make
 
 echo '\n :: Install Ansible :: \n'
 make install_ansible
+
+echo '\n :: Install environment :: \n'
+make install_environment

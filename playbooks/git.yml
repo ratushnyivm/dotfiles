@@ -10,6 +10,7 @@
     - name: Install git
       ansible.builtin.apt:
         name: git
+        update_cache: true
 
     - name: Set name
       community.general.git_config:
