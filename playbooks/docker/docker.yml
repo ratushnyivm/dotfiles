@@ -28,6 +28,6 @@
 
     - name: Step 4
       ansible.builtin.user:
-        name: slava
+        name: "{{ ansible_facts.env['SUDO_USER'] }}"
         groups: docker
         append: true
