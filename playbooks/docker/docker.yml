@@ -1,4 +1,4 @@
-- name: Local install
+- name: Docker install
   hosts: localhost
   become: true
 
@@ -26,6 +26,8 @@
           - docker-compose-plugin
         update_cache: true
 
+    # To apply the new group membership, log out of the server and back in,
+    # or type the following: su - ${USER}
     - name: Step 4
       ansible.builtin.user:
         name: "{{ ansible_facts.env['SUDO_USER'] }}"

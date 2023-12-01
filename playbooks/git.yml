@@ -1,4 +1,4 @@
-- name: Local install
+- name: Git install
   hosts: localhost
   become: true
 

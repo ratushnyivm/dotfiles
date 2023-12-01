@@ -6,3 +6,4 @@ install_ansible:
 install_environment:
 	ansible-playbook playbooks/git.yml -i inventory.yml -K
 	ansible-playbook playbooks/docker/docker.yml -i inventory.yml -K
+	ansible-playbook playbooks/pyenv.yml -i inventory.yml -K

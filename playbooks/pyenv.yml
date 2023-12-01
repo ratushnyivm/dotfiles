@@ -1,0 +1,32 @@
+- name: Pyenv install
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: Step 1
+      ansible.builtin.apt:
+        name:
+          - build-essential
+          - libssl-dev
+          - zlib1g-dev
+          - libbz2-dev
+          - libreadline-dev
+          - libsqlite3-dev
+          - curl
+          - libncursesw5-dev
+          - xz-utils
+          - tk-dev
+          - libxml2-dev
+          - libxmlsec1-dev
+          - libffi-dev
+          - liblzma-dev
+        update_cache: true
+
+    - name: Step 2
+      ansible.builtin.uri:
+        url: https://pyenv.run
+
+    - name: Step 3
+      ansible.builtin.command: /home/slava/.pyenv/bin/pyenv install 3.11.6
+      register: output
+      changed_when: output.rc != 0
